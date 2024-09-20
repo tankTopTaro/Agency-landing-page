@@ -576,7 +576,7 @@ nav ul li a:hover {
     }
 
     .gallery {
-        margin: 5rem;
+        margin-top: 5rem;
         padding-top: 15rem;
         display: grid;
         grid-template-columns: repeat(2, 1fr);
