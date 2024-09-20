@@ -1,3 +1,22 @@
+const backToTop = document.getElementById('backToTop')
+const header = document.querySelector('.header')
+
+const scrollToTop = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+        if(!entry.isIntersecting) {
+            backToTop.style.display = 'block'
+        } else {
+            backToTop.style.display ='none'
+        }
+    })
+}, { threshold: [0, 0.1] })
+
+scrollToTop.observe(header)
+
+backToTop.addEventListener('click', () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' })
+})
+
 const observer = new IntersectionObserver((entries) => {
     entries.forEach((entry) => {
         if (entry.isIntersecting) {
@@ -13,7 +32,7 @@ const observer = new IntersectionObserver((entries) => {
     threshold: [0, 0.1, 1]
 })
 
-const tags = document.querySelectorAll("header, section, div, img, footer")
+const tags = document.querySelectorAll("section")
 
 tags.forEach((tag) => {
     observer.observe(tag)

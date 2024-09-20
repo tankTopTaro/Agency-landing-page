@@ -5,4 +5,5 @@ const toggleNav = () => {
   navbar.classList.toggle("active");
   mobileNav.classList.toggle("hamburger-active");
 };
+
 mobileNav.addEventListener("click", () => toggleNav());
